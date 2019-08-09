@@ -18,12 +18,12 @@
             'paper' : 'rock'
         }
 
-        function computerChoice(){
+        function getComputerChoice(){
             let options = ['rock','paper','scissors']
             return options[Math.floor(Math.random()*options.length)]
         }
 
-        function humanChoice(){
+        function getHumanChoice(){
             let choice = prompt("Rock? Paper? or Scissors?")
             return choice.toLowerCase()
         }
@@ -35,8 +35,8 @@
         }
     
         function playGame(){
-            let human = humanChoice()
-            let computer = computerChoice()
+            let human = getHumanChoice()
+            let computer = getComputerChoice()
             let message = getWinner(human, computer)
             console.log(message)
         }
