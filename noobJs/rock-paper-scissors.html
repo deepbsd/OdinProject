@@ -30,8 +30,9 @@
 
         function getWinner(human, computer){
             console.log(wins, " human: ",human, " computer: ",computer)
-            if ( Object.entries(wins).filter( arr => JSON.stringify([human,computer]) === JSON.stringify(arr) ) ) return "You win!"
-            else return "Sorry!  You didn't win."
+            if (wins[human] === computer) return "You win!"
+            else if (human === computer) return "You tied!"
+            else return "Sorry! You lost!"
         }
     
         function playGame(){
