@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Rock Paper Scissors: Console Version</h1>
+
+    <p>By console version, I mean you have to open the console!</p>
+
+
+    <script>
+
+        const wins = {
+            'rock' : 'scissors',
+            'scissors' : 'paper',
+            'paper' : 'rock'
+        }
+
+        function computerChoice(){
+            let options = ['rock','paper','scissors']
+            return options[Math.floor(Math.random()*options.length)]
+        }
+
+        function humanChoice(){
+            let choice = prompt("Rock? Paper? or Scissors?")
+            return choice.toLowerCase()
+        }
+
+        function getWinner(human, computer){
+            console.log(wins, " human: ",human, " computer: ",computer)
+            if ( Object.entries(wins).filter( arr => JSON.stringify([human,computer]) === JSON.stringify(arr) ) ) return "You win!"
+            else return "Sorry!  You didn't win."
+        }
+    
+        function playGame(){
+            let human = humanChoice()
+            let computer = computerChoice()
+            let message = getWinner(human, computer)
+            console.log(message)
+        }
+    
+        for (let i=0; i<5; i++){
+            playGame()
+        }
+    
+    </script>
+
+    
+</body>
+</html>

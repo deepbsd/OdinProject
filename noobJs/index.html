@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>JS Fundamentals</h1>
+
+    <p>Play console version rock paper scissors <a
+        href="rock-paper-scissors.html">here</a>.</p>
+
+
+    <p>Open the console and see how it works!</p>
+
+
+
+    <script>
+        function add7(num){
+            return +num + 7
+        } 
+
+        let input = prompt("Enter a number to add 7 to...")
+        let result = add7(input)
+        alert(`result is ${result}`) 
+
+        function multiply(first, second){
+            return +first * +second
+        }
+
+        let input1 = prompt("Enter two numbers to multiply together: ")
+        let nums = input1.split(" ").map( chr =>  +chr )
+        let product = multiply(nums[0], nums[1])
+        alert(`Your product is ${product}`)
+
+        function capitalize(string){
+            return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+        }
+
+        let input2 = prompt("Enter a string to test 'capitalize()' on...")
+        let capitalized = capitalize(input2)
+        alert(`Your new string is ${capitalized}`)
+
+        function lastLetter(string){
+            return string.slice(string.length-1)
+        }
+        let input3 = prompt("Enter a string to test 'lastLetter()' on")
+        let last = lastLetter(input3)
+        alert(`Here is your answer:  ${last}`)
+        
+        
+        
+    </script>
+
+
+</body>
+</html>
