@@ -14,7 +14,10 @@ h1 {
 }
 
 .output {
-    margin: 20px auto;
+    margin: 10px auto;
+    font-family: sans-serif;
+    font-size: 15pt;
+    line-height: 19pt;
 }
 
 button {
