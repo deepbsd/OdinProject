@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+    margin: 50px;
+    text-align: center;
+}
+
+.wrapper {
+    margin-left: 30px;
+    margin-bottom: 100px;
+}
+
+button {
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin: 40px;
+}
+
+#rock {
+    background-color: orangered;
+    color: white;
+}
+
+#paper {
+    background-color: skyblue;
+    color: white;
+}
+
+#scissors {
+    background-color: teal;
+    color: white;
+}
+
+
+
