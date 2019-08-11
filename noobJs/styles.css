@@ -13,6 +13,10 @@ h1 {
     margin-bottom: 100px;
 }
 
+.output {
+    margin: 20px auto;
+}
+
 button {
   border-radius: 10px;
   height: 100px;

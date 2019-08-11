@@ -56,13 +56,20 @@
         }
     
         function playGame(){
-            let human = getHumanChoice()
-            let computer = getComputerChoice()
-            let message = getWinner(human, computer)
-            console.log(message)
+   
         }
-    
-        $("#rock").on("click")
+   
+        // Start gameplay when user clicks...
+        $("button").click(function(ev){
+            ev.preventDefault()
+            let computer = getComputerChoice()
+            let human = $(this).attr('id')
+            let message = getWinner(human, computer)
+            console.log("human choice: ",human, " computer choice: ",computer)
+            console.log(message)
+            $(".output").html("<br>"+message+"<br>You chose: "+human+"<br>Computer chose: "+computer)
+        })
+ 
     
     </script>
 
