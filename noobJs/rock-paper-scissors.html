@@ -2,14 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Rock, Paper, Scissors</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+      <!--
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+      -->
+    </script>
 </head>
 <body>
-    <h1>Rock Paper Scissors: Console Version</h1>
+    <div class="wrapper">
+    
+        <h1>Rock Paper Scissors</h1>
 
-    <p>By console version, I mean you have to open the console!</p>
+
+        
+        <h3>Please pick one...</h3>
+
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        
+        <h3 class="results">Your results...</h3>
+
+        <div class="output">
+        </div>
 
 
+    </div>
     <script>
 
         const wins = {
@@ -23,8 +44,8 @@
             return options[Math.floor(Math.random()*options.length)]
         }
 
-        function getHumanChoice(){
-            let choice = prompt("Rock? Paper? or Scissors?")
+        function getHumanChoice(choice){
+            //let choice = prompt("Rock? Paper? or Scissors?")
             return choice.toLowerCase()
         }
 
@@ -35,15 +56,18 @@
         }
     
         function playGame(){
-            let human = getHumanChoice()
-            let computer = getComputerChoice()
-            let message = getWinner(human, computer)
-            console.log(message)
+            $("button").click(function(ev){
+                ev.preventDefault()
+                let computer = getComputerChoice()
+                let human = $(this).attr('id')
+                let message = getWinner(human, computer)
+                console.log("human choice: ",human, " computer choice: ",computer)
+                console.log(message)
+                $(".output").html("<br>"+message+"<br>You chose: "+human+"<br>Computer chose: "+computer)
+            })
         }
-    
-        for (let i=0; i<5; i++){
-            playGame()
-        }
+
+        playGame()
     
     </script>
 
